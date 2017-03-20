@@ -1,0 +1,22 @@
+*** RUNNING MODE
+
+3		::	MODE						![1] ExArt cross sections, [2] Mishna 11 cross sections, [3] AMES Cross Sections
+1		::	WRITE_OUT
+
+*** STAR/PLANET
+
+1		::	INPUT_SP										[1-3] Black body integrated in 14 bands for a 5800 K, 4500 K,3200 [4] Read also Tstar and compute
+1.000	::	PL_DIST											[AU] Planet distance in AU, choose -1 if stellar spectrum is already scaled
+0.5		::	ND_VAR											Factor to account for day/night variation
+1.000	::	FLUX_SCALE										Generic scale factor for total input flux [e.g. fainter sun]
+
+0.531	::	PL_RAD											In unit of Earth radius
+0.107	::	PL_MAS											In unit of Earth mass
+
+0.2		::	ALBEDO											BOND ALBEDO in the visible [0.24:4.5]
+0		::	LAMBER											For ALBEDO different than 0, [T] Lambertian reflection [F] no
+
+
+Todo:
+
+INPUT_SP allow whatever temperature

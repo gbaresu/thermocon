@@ -1,0 +1,53 @@
+01 DONE
+
+Mars case
+500 mbar
+alb=0.2
+no lamber
+250 K
+CO2=0.95
+no water
+MARS DIM
+
+02 DONE
+
+Terra like
+1000 mbar
+alb=0.2
+no lamber
+250 K
+CO2=0.95
+no water
+MARS DIM
+
+03 DONE
+
+C1
+1000 mbar
+alb=0.2
+no lamber
+300 K
+CO2=0.95
+no water
+EARTH DIM
+
+04 DO-R
+
+C2
+1000 mbar
+alb=0.2
+no lamber
+300 K
+CO2=0.01
+no water
+EARTH DIM
+
+05 
+
+C2
+1000 mbar
+alb=0.2
+no lamber
+300 K
+CO2=0.01
+water manabe 70%
