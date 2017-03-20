@@ -1,0 +1,74 @@
+17		::	INPUT_SP										[1-16] INPUT spectrum
+5778	:: TSTAR
+1.0		:: RSTAR
+1.00	::	PL_DIST											[AU] Planet distance in AU, choose -1 if stellar spectrum is already scaled
+0.5		::	ND_VAR											Factor to account for day/night variation
+1.00	::	SOLFAC										Generic scale factor for total input flux [e.g. fainter sun]0.7417
+60.00	::	ZANG										Inclination of incident rays
+
+1.000	::	PLANET RADIUS									In unit of Earth radius
+1.000	::	PLANET MASS										In unit of Earth mass
+
+0.24	:: 	LAM_MIN											Minimum lambda [mic] not lower than 0.25
+100.5		:: 	LAM_MAX											Maximum lambda [mic]
+
+3		::	INIT_ATM										[1] Start ISOTHERMAL [2] Read INPUT/INPUT03
+250		::	TINIT 											Input temperature at each level [if INIT_ATM is not 1 this value does not matter]
+.true.	::	HYDRO											[T] Compute scale height for Hydro Eq [F] Use fixed scaled
+7500	::	SCALE_HEIGHT									Read fixed scale height in m, if HYDRO is false. 
+
+0.000	::	ALBEDO VIS										In unit of Earth mass
+
+*** SPEC
+
+0.24	:: 	LAM_MIN											Minimum lambda [mic] not lower than 0.25
+100.5		:: 	LAM_MAX											Maximum lambda [mic]
+0.001	:: 	LAM_RES											Spectral resolution [mic]
+
+*** OUTPUT
+
+Y		::  INTERP_SP										[Y] print interpolated spectrum [whatever else] do not print
+2		::  INTERP_KT										[1] interpolate transmissions [2] interpolate k
+Y		::  TAU_OUT											[Y] print tau at each layer in OUTPUT/TAU [whatever else] do not print
+
+*** ATMOSPHERE
+
+100		::	NLYR 											Number of Layers [Must coincides with INPUT03 number of lines]
+1.0		::  SCALE_PRESS										Apply scale factor for pressure at each level (standard 1 atm at the ground)
+0.01	::  SCALE_CO2										Apply scale factor for CO2 abundance at each level (standard 1, meaning 100%)
+1		::  H2O_MODE										[0] H2O=0 everywhere, [1] use manabe & Wetherald profile
+0.0		::  SHIFT_TEMP										Apply shift for T at each level (standard 300 K at the ground)
+
+*** DISORT
+
+.false.				::	USRTAU											Return radiant quantities at specified points if true
+8					::	NSTR											Polar angles to be used
+.false.				::	USRANG											Return radiant quantities at specified polar angles
+0					::	NPHI											Return radiant quantities at specified azimuthal angles
+0					::	IBCND											[0] specify boundary conditions [1] ?
+350.0				::	FBEAM											Intensity of incident parallel beam [W/m2]
+1.0 				::	UMU0											Polar angle of incident beam
+0.0					::	PHI0											Azimuthal angle of incident beam
+0.0					::	FISOT											Intensity of incident isotropic illumination
+.true.				::	LAMBER
+BTEMP
+TTEMP
+1.0					::	TEMIS											Emissivity of top layer
+.true. 				::	DELTAM											Use Delta-M method
+.false.				::	PLANK											Include thermal emission
+.true.				::	ONLYFL											ONLY FLUX Return flux, heatings and mean I . NO intensities.
+0.01				::  ACCUR											Convergence criterion for azimuthal cosine series
+
+*** COMPOSITION
+
+0					:: H2O												[1] Manabe 77% [2] Earth profile [0] Switch Off
+360					:: CO2												[0] Switch off [x] ppm
+780000				:: N2												[0] Switch off [x] ppm
+0					:: O3												[0] Switch off [1] Terrestrial profile
+0					:: CH4												[0] Switch off [x] ppm	
+
+INPUT_SP
+	[1] user spectrum 
+	[2-6]   spectrum of Gstar (T=5800 K, logg=4.5) with 5 different metallicities: log M/H = -1.5,-1.0,-0.5,-0.0,0.3 respectively
+	[7-11]  spectrum of Kstar (T=4500 K, logg=4.5) with 5 different metallicities: log M/H = -1.5,-1.0,-0.5,-0.0,0.3 respectively
+	[12-16] spectrum of Mstar (T=3200 K, logg=4.5) with 5 different metallicities: log M/H = -1.5,-1.0,-0.5,-0.0,0.3 respectively
