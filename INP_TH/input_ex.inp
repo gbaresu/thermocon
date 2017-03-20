@@ -1,0 +1,20 @@
+ 17            : INPUT SP
+   3200.0000000000000               : STAR TEMP
+  0.38000000000000000               : STAR RAD
+  0.21999999999999997               : PL DIST
+  0.54200000000000004               : ND VAR
+ 1.00         : SOL FACT
+   60.000000000000000               : ZANG
+
+   1.7100000000000000           : RPL
+   7.0899999999999999           : MPL
+
+  0.239999995          LMIN
+   100.500000          LMAX
+
+ N       : INTERP
+ 2       : INTERP K
+ N       : TAU OUT
+
+         100     : NLAYER
+  0.13000000000000000          : ALBEDO BOND VISIBLE

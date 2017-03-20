@@ -1,0 +1,28 @@
+** -------------  PLANET AND STAR DATA
+
+7.090		MPL				:: Mass [Earth masses]
+1.710		RPL				:: Radius [Earth radius]
+0.220		DPL				:: Distance from the star [AU]
+3200		TST				:: Stellar Temperature
+0.380		RST				:: Stellar Radius [In solar radii]
+0.13		ALB				:: Bond Albedo (VIS)
+0.542    	SOLFAC			:: Day/Night Factor
+60			SZA				:: Solar zenith angle (degrees)
+0	     	CLR_MODE		:: critical lapse rate mode (0) means it is calculated with g/Cp [always dry]
+4.8     	CLR				:: critical lapse rate (read if CLR_MODE=1)
+1		WAT_MODE		:: fix hum profile (2), calculate humidity profile with T (1), dry case (0)
+60			WAT_HUM			:: humidity at the ground (read if WAT_MODE=1)
+
+10.00		SCALE_PRE		:: scale factor for pressure
+5.0e-02		SCALE_CO2		:: scale factor for CO2
+0.00		SHIFT_TEMP		:: temperature shift [K]
+
+** -------------  CODE RELATED QUANTITIES
+
+2			M_TYPE			:: [1] Moderate [2] Low
+4			I_TIME			:: Integration time [hours] (real number)
+1e-2		C_CRI			:: Convergence criterion [(Tnew-Told) per day] (ONLY AT THE GROUND)
+9999		I_MAX			:: stop anyway after itmax [maximum number of iterations]
+1			CH_CON			:: (1) use convective correction (0) radiative only
+
+
